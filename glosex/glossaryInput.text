@@ -1,0 +1,268 @@
+CPU,CPUFREQ,CPU Frequency
+CPU,CPU Power Mode: Cortex-A78,C1 IDLE State (WFI)
+CPU,SMP,Symmetric multiprocessing
+CPU,CPU Hotplug,Dynamic CPU Hotplug
+Connectivity,N930,Crash Dump
+Connectivity,N931,N930 Bootloader
+Connectivity,N932,N930 Main Binary
+Connectivity,N930 Interface IPC,Configure Reserved Memory for sharing with N930
+Connectivity,N930 Interface IPC,Control N930 On/Off/Reset
+Connectivity,N930 Interface IPC,Device Power Management
+Connectivity,N930 Interface IPC,Tx/Rx via. PCIe link device
+Connectivity,PCIe Single SoC,PCIe RC
+Connectivity,PCIe Single SoC,PCIe Bifurcartion(RC)
+Connectivity,PCIe Single SoC,PCIe EP
+Connectivity,PCIe Single SoC,PCIe Bifurcartion(EP)
+Connectivity,PCIe Mutli SoC,Link training and link up
+Connectivity,PCIe Mutli SoC,Dislink
+Connectivity,PCIe Mutli SoC,Doorbell
+Connectivity,PCIe Mutli SoC,MSI/MSI-X
+Connectivity,PCIe Mutli SoC,DMA
+Connectivity,PCIe Mutli SoC,SCD
+Connectivity,PCIe Mutli SoC,vEthernet over SCD
+Connectivity,PCIe Switch,TO BE DONE
+Connectivity,USB,Android ADB support
+Connectivity,USB,Linux ADB Support
+Connectivity,USB,HUB
+Connectivity,USB,Input Device (Keyboard, Mouse)
+Connectivity,USB,Mass Storage
+Connectivity,USB,MTP MEDIA TRANSFER PROTOCOL
+Connectivity,USB,USB Host Device Configuration
+Connectivity,USB,xHCI
+Connectivity,Ethernet,Packet/Multi Channel Packet Tx/Rx
+Connectivity,Ethernet,Link up (ping test, loopback)
+Connectivity,Ethernet,vEthernet (ping test between VMs)
+Connectivity,Ethernet,Supported speed/SerDes modes (RGMII/SGMII/USXGMII 1Gbps/2.5Gbps/10Gbps (loopback))
+Connectivity,Ethernet,Ethernet-IOV (HPT)
+Connectivity,Ethernet Multi SoC,Link up (ping test)
+Connectivity,Ethernet Multi SoC,Supported speed
+Connectivity,Ethernet Multi SoC,PTP
+Connectivity,Ethernet Multi SoC,HPT
+Connectivity,Ethernet Switch,PRP
+Connectivity,Ethernet Switch,switching speed ( + measuring CPU load )
+Connectivity,Ethernet Switch,PTP TC
+Connectivity,Ethernet Switch,TO BE DONE 
+Graphics,Graphics Platform,Vulkan 1.1 (Wayland)
+Graphics,Graphics Platform,Vulkan 1.1 (Andorid)
+Graphics,Graphics Platform,GPU Information Interface
+Graphics,Graphics Platform,GPU SysFS User Interface
+Graphics,Graphics Platform,EGL 1.4 STANDARD(Android)
+Graphics,Graphics Platform,EGL 1.4 Standard(Wayland)
+Graphics,Graphics Platform,OPENCL 2.0 FULL PROFILE STANDARD
+Graphics,Graphics Platform,OPENGL ES 1.1 STANDARD
+Graphics,Graphics Platform,OPENGL ES 2.0 STANDARD
+Graphics,Graphics Platform,OPENGL ES 3.0 STANDARD
+Graphics,Graphics Platform,OPENGL ES 3.1 STANDARD
+Graphics,Graphics Platform,OPENGL ES 3.2 STANDARD
+Graphics,Graphics Platform,GPU Memory Profiling
+Multimedia,Graphics Platform,Display 10BPC
+Multimedia,Graphics Platform,DisplayPort
+Multimedia,Graphics Platform,H/W Overlay
+Multimedia,Graphics Platform,HDP
+Multimedia,Graphics Platform,libdrm KMS ioctls Support
+Multimedia,Graphics Platform,MST
+Multimedia,Graphics Platform,Multiple Display to DP/DSI
+Multimedia,Graphics Platform,DSI
+Multimedia,Scaler,Scaling/Cropping/Rotation/Flipping/Color Space Conversion
+Multimedia,GEM,Graphics Execution Manager
+Multimedia,UBM,Local Domain Connection
+Multimedia,UBM,Remote Domain Connection
+Multimedia,HWC HAL,Non-secure Buffer Video Playback Support
+Multimedia,HWC HAL,Secure Buffer Video Playback Support
+Multimedia,HWC HAL,Source Buffer Client Composition Support
+Multimedia,HWC HAL,DRM HWC Display
+Multimedia,DMA ,DMA Heap
+Multimedia,Audio Interface,I2S/TDM Speaker in Audio Interface
+Multimedia,Audio Firmware,DSP in abox fw
+Multimedia,Audio Firmware,I2S/TDM Mic in Audio Firmware
+Multimedia,Audio Firmware,I2S/TDM Speaker in Audio Firmware
+Multimedia,Audio Firmware,Routing
+Multimedia,System MMU,System MMU
+Video,Video,H.264 Decoding
+Video,Video,H.264 Encoding
+Video,Video,HEVC Decoding
+Video,Video,HEVC Encoding
+Video,Video,Multi-Instance Decoding/Encoding
+Video,Video,VP9 Decoding
+Video,Video,VP9 Encoding
+Video,Video,AV1 Decoding
+Video,SMFC,JPEG Decoding/Encoding
+POWER,ACPM,ACPM Framework
+POWER,BTS,BTS 
+POWER,CMU,CMU
+POWER,ECT,Exynos Characteristic Table
+POWER,PMIC,Power Management Integrated Circuit  driver support
+POWER,PMIC RTC,Samsung PMIC RTC driver support
+POWER,ACPM DVFS Plugin,ACPM DVFS Plugin
+POWER,DTM,Temperature Measurment
+POWER,DTM,Tripping Control
+POWER,SUSPEND TO RAM,S2R
+SECURITY,CRYPTOMANAGER,SSS AES CONTROL
+SECURITY,Secure Boot,Android Verified Boot
+SECURITY,Secure Boot,Secure Boot
+SECURITY,Secure Boot,Firmware Secure Boot
+SECURITY,OTP,OTP Programming/Reading
+SECURITY,Flash Memory Protector,FMP File Based Encryption
+SECURITY,Flash Memory Protector,FMP Metadata Encryption
+SECURITY,DRAM Encryption, DEE for support DRAM encryption of EL3 monitor
+SECURITY,DRAM Encryption, DEE for support DRAM encryption of Secure OS
+SECURITY,Binary Encryption,Binary Encryption for EL3/LDFW
+SECURITY,Secure Monitor,EPBL/EL3 Monitor
+SECURITY,RTIC,Generate Hash Value
+SECURITY,Secure OS,Secure OS
+SECURITY,DRM,Widevine DRM
+SECURITY,MAC,SELinux
+SECURITY,Gatekeeper,Gatekeeper
+SECURITY,Keymint,Keymint
+SECURITY,RPMB,RPMB
+STORAGE,UFS,Data read and write
+STORAGE,UFS,Device enumeration
+STORAGE,UFS,Device error handling
+STORAGE,UFS,Data read and write with HPT
+STORAGE,UFS,Device enumeration with HPT
+STORAGE,UFS,Device error handling with HPT
+STORAGE,UFS,Gear5 Interface
+STORAGE,UFS,PH/VH weight scheduling
+STORAGE,UFS,Multi Channel Queue with SPI
+STORAGE,UFS,Multi Channel Queue with ESI
+STORAGE,UFS,Multi Channel Queue with SPI and HPT
+STORAGE,UFS,Multi Channel Queue with ESI and HPT
+SYSTEM,Mailbox,Mailbox-H
+SYSTEM,DMA,DMA I/F
+SYSTEM,Debugging,Debug Snapshot
+SYSTEM,Debugging,Dump GPR
+SYSTEM,Debugging,PC Value extraction through Coresight on Panic
+SYSTEM,Debugging,ECC Handler
+SYSTEM,Debugging,ITMON
+SYSTEM,Debugging,Watchdog Timer
+SYSTEM,Debugging,PPMU
+SYSTEM,Debugging,RAM DUMP ON PANIC
+SYSTEM,GPIO,GPIO Control
+SYSTEM,GPIO,GPIO Interrupt Function
+SYSTEM,Interrupt Management,Interrupt Management
+SYSTEM,"LK
+(Little Kernel)",A/B Booting
+SYSTEM,"LK
+(Little Kernel)",PIT for Virtual Machine
+SYSTEM,"LK
+(Little Kernel)",Quick Booting
+SYSTEM,"LK
+(Little Kernel)",USB Downloader Support
+SYSTEM,"LK
+(Little Kernel)",USB First Booting
+SYSTEM,"LK
+(Little Kernel)",USB Second Booting
+SYSTEM,"LK
+(Little Kernel)",UFS BOOTING
+SYSTEM,"LK
+(Little Kernel)",FASTBOOT COMMAND SUPPORT
+SYSTEM,System Timer,SCHEDULE TIMER FUNCTION
+SYSTEM,USI,UART Device Configuration
+SYSTEM,USI,UART DMA
+SYSTEM,USI,UART Transfer
+SYSTEM,USI,SPI Device Configration
+SYSTEM,USI,SPI DMA
+SYSTEM,USI,SPI Transfer
+SYSTEM,USI,HSI2C Device Configuration
+SYSTEM,USI,HSI2C Read/Write
+SFI BL,SFI BL,Bootloader
+SFI CDD,ABOX,ABOX
+SFI CDD,BIC,Bus Integrity Checker
+SFI CDD,CLKMON,CLKMON
+SFI CDD,DPU,DPU
+SFI CDD,EXT_WDG,ExtWdg
+SFI CDD,FMU,FMU
+SFI CDD,Mailbox,Mailbox-S
+SFI CDD,SFILIB,SFI DRAM Utility
+SFI CDD,SFILIB,Safety Access Protection
+SFI CDD,SFILIB,SFILib- SoC variant
+SFI CDD,SFILIB,SFILib- SPMI Utility
+SFI CDD,SFILIB,SFILib- Power Utility
+SFI CDD,SFRMON,Periodic Register Monitor
+SFI CDD,SFTST,CLKMON POST
+SFI CDD,SFTST,DCLS(Dual-Core Lockstep) POST
+SFI CDD,SFTST,DRAM Safety Mechanism Self-Test
+SFI CDD,SFTST,FMU(Fault Management Unit) POST
+SFI CDD,SFTST,INTMEM ECC POST
+SFI CDD,SFTST,Safety Access Protection POST
+SFI CDD,SFTST,VOLMON POST
+SFI CDD,SFTST,Watchdog Timer POST
+SFI CDD,SFTST,ECC Wrapper POST
+SFI CDD,SFTST,PMIC double-lock POST
+SFI CDD,SFTST,SCI POST
+SFI CDD,SFTST,TMU POST
+SFI CDD,SFTST,XSPI POST
+SFI CDD,STLM,STLM
+SFI CDD,TMU_SFI,TMU in SFI
+SFI CDD,USI,USI
+SFI CDD,VOLMON,VOLMON
+SFI MCAL,DIO,DIO
+SFI MCAL,ETH,ETH
+SFI MCAL,FLS,FLS
+SFI MCAL,GPT,GPT
+SFI MCAL,MCU,MCU
+SFI MCAL,PORT,PORT
+SFI MCAL,RAMTST,RAMTST
+SFI MCAL,WDG,WDG
+SFI MCAL,CAN,CAN
+Hypervisor BSP,2nd Stage IO Protection,S2MPU(Stage-2 IO-memory protection)
+Hypervisor BSP,3rd Stage IO Protection,S2MPU updates MPT(memory page table) on runtiome for VM shared memory
+Hypervisor BSP,4th Stage IO Protection,vGEN (VID generator)
+Hypervisor BSP,5th Stage IO Protection,S2MPU supports GuestOS normal reboot scenario
+Hypervisor BSP,6th Stage IO Protection,S2MPU supports GuestOS sudden reset scenario
+Hypervisor BSP,7th Stage IO Protection,stage-2 io memory address translation
+Hypervisor BSP,Device Emulation,GPIO HW IP emulation
+Hypervisor BSP,Device Emulation,UART HW IP emulation
+Hypervisor BSP,Interrupt Controller,Virtual Interupt Management (ARM GICv3 virtualization)
+Hypervisor BSP,Inter-VM Communications,memory sharing between GuestOSes on runtime based on stage-2 identical mapping
+Hypervisor BSP,Inter-VM Communications,vEthernet
+Hypervisor BSP,Inter-VM Communications,memory sharing using reserver(invalid-region) memory between GestOSes
+Hypervisor BSP,Inter-VM Communications,VIRTIO- framework on Redbend HV
+Hypervisor BSP,Inter-VM Communications,VRPC (virtual remote procedure call): RB_PV-framework
+Hypervisor BSP,Inter-VM Communications,vbpipe
+Hypervisor BSP,Inter-VM Communications,vlink: RB_PV-framework
+Hypervisor BSP,Inter-VM Communications,VIRTIO-vSock: VIRTIO-device/driver
+Hypervisor BSP,Inter-VM Communications,VIRTIO-console: VIRTIO-device/driver
+Hypervisor BSP,Inter-VM Communications,VIRTIO-fs: VIRTIO device/driver
+Hypervisor BSP,Inter-VM Communications,VIRTIO-block: VIRTIO device/driver
+Hypervisor BSP,Inter-VM Communications,VIRTIO-net: VIRTIO device/driver
+Hypervisor BSP,Power Management,ARM PSCI emulation (vPSCI)
+Hypervisor BSP,Quick Booting,GuestOS parallel booting
+Hypervisor BSP,Quick Booting,Hypervisor initialize and booting
+Hypervisor BSP,System Console,HV log on UART console
+Hypervisor BSP,VM Management,Alteration GuestOS's device-tree attribute by Hypervisor
+Hypervisor BSP,VM Management,Virtualization(Hypervisor & VM) configuration by HCB (Hypervisor configuration block)
+Hypervisor BSP,VM Management,SMC filter
+Hypervisor BSP,VM Management,VM Creation
+Hypervisor BSP,VM Management,Guest OS panic propagation & injection
+Hypervisor BSP,VM Management,VM CPU hotplug and handover
+Hypervisor BSP,VM Management,Guest OS normal shutdown by Server OS via HV
+Hypervisor BSP,VM Management,Guest OS normal reboot by Server OS via HV
+Hypervisor BSP,VM Management,Guest OS sudden halt(stop) by Server OS via HV
+Hypervisor BSP,VM Management,Guest OS sudden reset by Server OS via HV
+Hypervisor BSP,VM Management,Server SO is shut down propagating all other Guest Oses' shutdown by vshutdown command on Server OS
+Hypervisor BSP,VM Management,System reboots after Server/Guest OS are shut down by vshutdown command on Server OS
+Hypervisor Tools,Profiling & instrument,sysfs nodes of HV log on GuestOS
+Hypervisor Tools,Profiling & instrument,HV monitoring: memory statistics
+Hypervisor Tools,Profiling & instrument,HV monitoring: physical CPU statistic
+Hypervisor Tools,Profiling & instrument,Hypervisor ramdump
+Hypervisor Tools,Profiling & instrument,HV monitoring: event statistic
+Hypervisor Tools,Profiling & instrument,HV monitoring: event log per pCPU
+Hypervisor Tools,Profiling & instrument,sysfs nodes for HV version on Guest OS
+Hypervisor Kernel,Core Configuration,Virtual CPU Management (pinning)
+Hypervisor Kernel,Core Configuration,ARM Generic Times (virtual, physical, hypervisor timer)
+Hypervisor Kernel,Core Configuration,ARMv8 Coretex-A Architecture
+Hypervisor Kernel,Core Configuration,ARMv8 virtualization extention architecture
+Hypervisor Kernel,Interrupt Controller,virtual ITS
+Hypervisor Kernel,Interrupt Controller,virtual eSPI
+Hypervisor Kernel,Memory Management,address trap emulation (on stage-2 identical mapping)
+Hypervisor Kernel,Memory Management,Virtual Memory Management (stage-2 identical mapping)
+Hypervisor Kernel,Memory Management,HV internal memory management using stage-2 MMU
+Hypervisor Kernel,VCPU Scheduling,VCPU scheduling
+CAMERA,Image Subsystem,Camera (MIPI CSI & ISPPRE) Image Sensor Interface
+CAMERA,Image Subsystem,User Interface(libcam)
+CAMERA,Image Subsystem,3AA & ISP (Demosaic & Image Enhancement)
+CAMERA,Image Subsystem,IS Chain(3AA, ISP, GDC) userRTA
+CAMERA,Image Subsystem,IQ Tuneset
+CAMERA,Image Subsystem,WRP
+CAMERA,EVS Camera HAL,EVS HAL

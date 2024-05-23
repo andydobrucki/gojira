@@ -1,0 +1,42 @@
+Group,Part,Engineers (IP),IP/Sub-IP,DSK Part,DSK Group, Leader
+Automotive,Automotive Core,Adam Iwaszkiewicz,Bootloader,System Core,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Derik Judka,System,System Core,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Michał Kowalski,Kernel,System Core,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Michał Halenski,Kernel,System Core,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Jan Gontarek,Power,System Framework,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Lubor Witkowski,Power,System Framework,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Tomasz Antoniuk,Power,System Framework,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Bartlomiej Wzorek,USB,System Framework,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Filip Szmit / Automotive Core / SRPOL,Debug,System Platform,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Konrad Tęgowski,Debug,System Platform,Auto System, Daniel Stryjewski
+Automotive,Automotive Core,Liubomir Bezgan,DRAM,DRAM,SoC Solution, Daniel Stryjewski
+Automotive,Automotive Core,Liubomir Bezgan,DRAM,DRAM,(PE Team), Daniel Stryjewski
+Automotive,Automotive Core,Maciej Kasprzak,SFI,Safety Solution,Auto Solution, Daniel Stryjewski
+Automotive,Automotive Core,Karol Partyka,SFI,Safety Solution,Auto Solution, Daniel Stryjewski
+Automotive,Automotive Solution,Fabbio Protopapa,Security,Security Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Marek Mucha,Security,Security Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Przemyslaw Selwiak,Security,Security Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Bartosz Glocki,Security,Security Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Jakub Stanula-Kaczka,Security,Security Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Karol Kozlowski,Hypervisor,VM Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Marcin Hyzorek,Hypervisor,VM Solution,Auto Solution, Jakub Jakubiszyn
+Automotive,Automotive Solution,Pawel Iwanow,Camera/SW,Automotive Camera SW,Platform, Jakub Jakubiszyn
+Automotive,Automotive Solution,Szymon Studniarz,Camera/IQ,Automotive Camera SW,(MM Dev Team), Jakub Jakubiszyn
+Automotive,Automotive Solution,Grzegorz Gierasimiuk,Camera/IQ,Automotive Camera SW,(MM Dev Team), Jakub Jakubiszyn
+Automotive,Automotive Graphics,Sebastian Domijański,Display/UBM,Auto Display,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Jan Niedziolka,Display,Auto Display,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Akmalkhon Mukhiddinov,GPU,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Krzysztof Buben,GPU,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Mikołaj Chądzyński,GPU,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Bohdan Soproniuk,GPU,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Patryk Gwiszcz,GPU,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Rafal Jasinski,GPU/ANGLE,Auto Graphics,Auto Compute, Adam Fijałkowski
+Automotive,Automotive Graphics,Michal Brydak ,SW PM,Auto SW PM,Automotive Process, Adam Fijałkowski
+Automotive,Automotive Graphics,Andrzej Dobrucki ,SW PM,Auto SW PM,Automotive Process, Adam Fijałkowski
+Automotive,Automotive Graphics,Dawid Skowronski,IT/CICD,DevOps group,SE Team, Adam Fijałkowski
+Automotive,Automotive Graphics,Jan Gawronski,IT/CICD,DevOps group,SE Team, Adam Fijałkowski
+Automotive,Automotive Graphics,Katarzyna Buczyńska,IT/CICD,DevOps group,SE Team, Adam Fijałkowski
+Automotive,Automotive Interfaces,Jakub Raczynski,Ethernet,Auto HSI,Auto Connectivity, Konrad Domagalski
+Automotive,Automotive Interfaces,Przemyslaw Sztaba,UFS,Auto HSI,Auto Connectivity, Konrad Domagalski
+Automotive,Automotive Interfaces,Arsen Eloglian,Audio,Auto Audio,Auto MM, Konrad Domagalski
+
