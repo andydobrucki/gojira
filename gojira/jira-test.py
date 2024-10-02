@@ -22,6 +22,14 @@ ascii_art_file = 'art.ascii'
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def get_current_version():
+    version_file = "version.txt"
+    if os.path.exists(version_file):
+        with open(version_file, 'r') as file:
+            return file.read().strip()
+    return "0.0"  # Default version if no version file exists
+
+
 # seen comments file
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 
@@ -33,7 +41,7 @@ def print_ascii_art(file_path):
 
 def establish_jira_connection(username, password):
     print_ascii_art(ascii_art_file)
-    print("Gojira Grab - JIRA Comment tracker 0.1 \nJira Tools by SRPOL / SDV")
+    print(f"Gojira Grab - JIRA Comment tracker {get_current_version()} \nJira Tools by SRPOL / SDV")
     print("Connecting to Jira...")
     JIRA_URL = "https://jira.slsi.samsungds.net/"
     jira_client = JIRA(options={'server': JIRA_URL, 'verify': False}, basic_auth=(username, password))
