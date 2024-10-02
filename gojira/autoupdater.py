@@ -2,11 +2,11 @@ import requests
 import shutil
 import sys
 
-GITHUB_REPO = "username/repo"  # Replace with your GitHub repository
+GITHUB_REPO = "andydobrucki/gojira"  # Replace with your GitHub repository
 CURRENT_VERSION = "0.1"  # Replace with your current version
 
 def check_for_update():
-    url = f"https://api.github.com/repos/andydobrucki/gojira/releases/latest"
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
     response = requests.get(url)
     response.raise_for_status()
     latest_release = response.json()
