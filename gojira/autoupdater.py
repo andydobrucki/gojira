@@ -30,6 +30,10 @@ def check_for_update():
             print("No assets found for the latest release. Downloading source archive instead.")
             download_url = latest_release["zipball_url"]
             download_file(download_url, "app.zip")
+            # Extract and delete app.zip if needed
+            # For example, you can use shutil.unpack_archive to extract the zip file
+            shutil.unpack_archive("app.zip", ".")
+            os.remove("app.zip")
         else:
             asset = latest_release["assets"][0]
             download_url = asset["browser_download_url"]
