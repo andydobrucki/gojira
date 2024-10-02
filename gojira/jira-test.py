@@ -2,7 +2,7 @@
 # GOJIRA Comment Tracker - Track JIRA new comments
 # a.dobrucki@samsung.com 
 # v.0.1
-
+import autoupdater
 import warnings
 from urllib3.exceptions import InsecureRequestWarning
 warnings.simplefilter('ignore', InsecureRequestWarning)
@@ -19,13 +19,16 @@ import yaml
 jql_str = 'filter = 87554 AND summary !~ "N/A" AND type = sub-task AND status not in (Closed, Resolved, "Drop")'
 ascii_art_file = 'art.ascii'
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 # seen comments file
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 
 def print_ascii_art(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         art = file.read()
-        print(art)
+    print(art)
 
 
 def establish_jira_connection(username, password):
@@ -79,7 +82,8 @@ def show_latest_activity(jira_client, seen_comments):
     )
     
     # Comment list
-    os.system('clear')
+    clear_console()
+
 
     print('Used Query: ' + jql_str)
     for issue, comment in all_comments:
@@ -87,11 +91,12 @@ def show_latest_activity(jira_client, seen_comments):
         formatted_date = created_date.strftime('%d-%m-%Y %H:%M')
         print(f"{issue.key}, {formatted_date}, - {comment.author.displayName} - CET, {issue.fields.summary}")
     
-    return all_comments
+    return all_comments  
 
 def main():
     # [-h] for help
     # username and password are required as arguments
+    autoupdater.check_for_update()
     parser = argparse.ArgumentParser(description='Show latest activity in JIRA issues.')
     parser.add_argument('username', type=str, help='JIRA username')
     parser.add_argument('password', type=str, help='JIRA password')
@@ -107,7 +112,7 @@ def main():
             input("Press Enter to see the first new comment or wait for the next update...")
             for issue, comment in all_comments:
                 clean_comment = clean_html(comment.body)
-                os.system('clear')
+                clear_console()
                 print(f"Issue: {issue.key}, Title: {issue.fields.summary}")
                 print(f'Link: {issue.self}')
                 print(f"Author: {comment.author.displayName}, Created: {comment.created}")
@@ -115,7 +120,7 @@ def main():
                 input("Press Enter to see the next comment...")
         else:
             print("No new comments.")
-            time.sleep(100)  
+            time.sleep(300)  
         
         save_seen_comments(seen_comments)
 
