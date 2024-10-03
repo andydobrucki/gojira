@@ -3,6 +3,10 @@
 Windows users - please install Windows Terminal before running this script - https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=PL
 App updates automatically on startup.
 
+### Installation
+Run this first from app folder to install dependency packages:
+`pip3 install -r requirements.txt` 
+
 ### Running the script
 
 jql_query is defined in jql_query.yaml file
