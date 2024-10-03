@@ -1,7 +1,7 @@
 # GOJIRA - Jira Tools by SRPOL / SDV
-# GOJIRA Grab - Comment Tracker - Track JIRA new comments
+# GOJIRA Comment Tracker - Track JIRA new comments
 # a.dobrucki@samsung.com 
-
+# v.0.1
 import autoupdater
 import warnings
 from urllib3.exceptions import InsecureRequestWarning

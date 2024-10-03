@@ -8,11 +8,7 @@ App updates automatically on startup.
 `python3 jira-test.py jiraid jirapassword`
 
 ### Excluding comnments from specific users
-The 'exclude.yaml' file (created on first run) accepts user emails that will be excluded from retrieved comments (e.g. yourself)
-
-Single entry in the yaml file should look like this:
-
-`- 'andy@mail.com'`
+The 'exclusion.yaml' file contains user emails that will be excluded from retrieved comments (e.g. yourself)
 
 ### Available releases:
 https://github.com/andydobrucki/gojira/releases
