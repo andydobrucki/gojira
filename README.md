@@ -7,6 +7,8 @@ App updates automatically on startup.
 
 `python3 jira-test.py jiraid jirapassword`
 
+On first run, app retrieves comments from the last 7 days. 
+
 ### Excluding comnments from specific users
 The 'exclude.yaml' file (created on first run) accepts user emails that will be excluded from retrieved comments (e.g. yourself)
 

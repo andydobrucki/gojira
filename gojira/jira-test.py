@@ -35,7 +35,11 @@ def get_current_version():
 
 # seen comments file
 
-
+def print_light_green(text):
+    light_green = '\033[92m'
+    reset = '\033[0m'
+    return f"{light_green}{text}{reset}"
+    
 def print_ascii_art(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         art = file.read()
@@ -106,7 +110,9 @@ def show_latest_activity(jira_client, seen_comments):
     for issue, comment in all_comments:
         created_date = datetime.strptime(comment.created, '%Y-%m-%dT%H:%M:%S.%f%z')
         formatted_date = created_date.strftime('%d-%m-%Y %H:%M')
-        print(f"{issue.key}, {formatted_date}, - {comment.author.displayName} - CET, {issue.fields.summary}")
+        issue_key_colored = print_light_green(issue.key)
+        print(f"{issue_key_colored} {formatted_date}, - {comment.author.displayName} - CET, {issue.fields.summary}")
+
     
     return all_comments  
 
