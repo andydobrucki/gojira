@@ -19,9 +19,6 @@ import yaml
 jql_str = 'filter = 87554 AND summary !~ "N/A" AND type = sub-task AND status not in (Closed, Resolved, "Drop")'
 ascii_art_file = 'art.ascii'
 
-SEEN_COMMENTS_FILE = 'seen_comments.yaml'
-EXCLUDE_FILE = 'exclude.yaml'
-
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -34,18 +31,13 @@ def get_current_version():
 
 
 # seen comments file
-
+SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 
 def print_ascii_art(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         art = file.read()
     print(art)
 
-def load_exclusion_list():
-    if (os.path.exists(EXCLUDE_FILE)):
-        with open(EXCLUDE_FILE, 'r') as file:
-            return set(yaml.safe_load(file))
-    return set()
 
 def establish_jira_connection(username, password):
     print_ascii_art(ascii_art_file)
@@ -77,7 +69,7 @@ def save_seen_comments(seen_comments):
 def show_latest_activity(jira_client, seen_comments):
     seven_days_ago = datetime.now(timezone.utc) - timedelta(days=7)
     all_comments = []
-    exclusion_list = load_exclusion_list()
+    
     jira_issues = import_jira_issues(jira_client)
     
     for issue in jira_issues:
@@ -85,8 +77,7 @@ def show_latest_activity(jira_client, seen_comments):
             recent_comments = [
                 comment for comment in issue.fields.comment.comments 
                 if datetime.strptime(comment.created, '%Y-%m-%dT%H:%M:%S.%f%z') > seven_days_ago
-                and comment.author.emailAddress not in exclusion_list
-            ] 
+            ]
             for comment in recent_comments:
                 if comment.id not in seen_comments:
                     all_comments.append((issue, comment))
