@@ -21,7 +21,7 @@ import yaml
 ASCII_ART_FILE = 'art.ascii'
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 EXCLUDE_FILE = 'exclude.yaml'
-JQL_QUERY_FILE = "jql_query.yaml"
+CONFIG_FILE = "config.yaml"
 
 
 def initialize_files():
@@ -33,9 +33,9 @@ def initialize_files():
         with open(SEEN_COMMENTS_FILE, 'w') as file:
             yaml.safe_dump([], file)
 
-    if not os.path.exists(JQL_QUERY_FILE):
-        with open(JQL_QUERY_FILE, 'w') as file:
-            yaml.dump({'jql_str': ''}, file)
+    if not os.path.exists(CONFIG_FILE):
+        with open(CONFIG_FILE, 'w') as file:
+            yaml.dump({'jql_str': '', 'jira_url': ''}, file)
 
 def load_config(file_path):
     with open(file_path, 'r') as file:
@@ -68,13 +68,11 @@ def load_exclusion_list():
             return set(yaml.safe_load(file))
     return set()
 
-def establish_jira_connection(username, password):
+def establish_jira_connection(username, password, JIRA_URL):
     print_ascii_art(ASCII_ART_FILE)
     print(f"Gojira Grab - JIRA Comment tracker {get_current_version()} \nJira Tools by SRPOL / SDV")
     print("Connecting to Jira...")
 
-
-    JIRA_URL = "https://jira.slsi.samsungds.net/"
     jira_client = JIRA(options={'server': JIRA_URL, 'verify': False}, basic_auth=(username, password))
     print("No Strong OAUTH Detected. Bypassing.")
     return jira_client
@@ -134,12 +132,16 @@ def show_latest_activity(jira_client, seen_comments):
     return all_comments  
 
 initialize_files()
-config = load_config(JQL_QUERY_FILE)
+config = load_config(CONFIG_FILE)
 if config['jql_str'] == '':
     print("Error: 'jql_str' is not defined in the jql_string.yaml file")
     exit(1)
+elif config['jira_url'] =='':
+    print('Error: JIRA URL is not defined in the config.yaml file')
+    exit(1)
 else:
     jql_str = config['jql_str']
+    JIRA_URL = config['jira_url']
 
 def main():
 
@@ -150,7 +152,7 @@ def main():
     parser.add_argument('username', type=str, help='JIRA username')
     parser.add_argument('password', type=str, help='JIRA password')
     args = parser.parse_args()
-    jira_client = establish_jira_connection(args.username, args.password)
+    jira_client = establish_jira_connection(args.username, args.password, JIRA_URL)
     seen_comments = load_seen_comments()
     
     while True:
