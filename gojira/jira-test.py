@@ -16,11 +16,31 @@ import yaml
 
 
 # Define your JQL Query here
-jql_str = 'filter = 87554 AND summary !~ "N/A" AND type = sub-task AND status not in (Closed, Resolved, "Drop")'
-ascii_art_file = 'art.ascii'
 
+
+ASCII_ART_FILE = 'art.ascii'
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 EXCLUDE_FILE = 'exclude.yaml'
+JQL_QUERY_FILE = "jql_query.yaml"
+
+
+def initialize_files():
+    if not os.path.exists(EXCLUDE_FILE):
+        with open(EXCLUDE_FILE, 'w') as file:
+            yaml.safe_dump([], file)
+    
+    if not os.path.exists(SEEN_COMMENTS_FILE):
+        with open(SEEN_COMMENTS_FILE, 'w') as file:
+            yaml.safe_dump([], file)
+
+    if not os.path.exists(JQL_QUERY_FILE):
+        with open(JQL_QUERY_FILE, 'w') as file:
+            yaml.dump({'jql_str': ''}, file)
+
+def load_config(file_path):
+    with open(file_path, 'r') as file:
+        return yaml.safe_load(file)
+    
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -31,9 +51,6 @@ def get_current_version():
         with open(version_file, 'r') as file:
             return file.read().strip()
     return "0.0"  # Default version if no version file exists
-
-
-# seen comments file
 
 def print_light_green(text):
     light_green = '\033[92m'
@@ -52,9 +69,11 @@ def load_exclusion_list():
     return set()
 
 def establish_jira_connection(username, password):
-    print_ascii_art(ascii_art_file)
+    print_ascii_art(ASCII_ART_FILE)
     print(f"Gojira Grab - JIRA Comment tracker {get_current_version()} \nJira Tools by SRPOL / SDV")
     print("Connecting to Jira...")
+
+
     JIRA_URL = "https://jira.slsi.samsungds.net/"
     jira_client = JIRA(options={'server': JIRA_URL, 'verify': False}, basic_auth=(username, password))
     print("No Strong OAUTH Detected. Bypassing.")
@@ -96,13 +115,11 @@ def show_latest_activity(jira_client, seen_comments):
                     all_comments.append((issue, comment))
                     seen_comments.add(comment.id)
     
-    # Sort all comments from newest to oldest
     all_comments.sort(
         key=lambda item: datetime.strptime(item[1].created, '%Y-%m-%dT%H:%M:%S.%f%z'), 
         reverse=True
     )
     
-    # Comment list
     clear_console()
 
 
@@ -111,21 +128,21 @@ def show_latest_activity(jira_client, seen_comments):
         created_date = datetime.strptime(comment.created, '%Y-%m-%dT%H:%M:%S.%f%z')
         formatted_date = created_date.strftime('%d-%m-%Y %H:%M')
         issue_key_colored = print_light_green(issue.key)
-        print(f"{issue_key_colored} {formatted_date}, - {comment.author.displayName} - CET, {issue.fields.summary}")
+        print(f"{issue_key_colored} {formatted_date}, - {comment.author.displayName}, {issue.fields.summary}")
 
     
     return all_comments  
 
 
-def initialize_files():
-    if not os.path.exists(EXCLUDE_FILE):
-        with open(EXCLUDE_FILE, 'w') as file:
-            yaml.safe_dump([], file)
-    
-    if not os.path.exists(SEEN_COMMENTS_FILE):
-        with open(SEEN_COMMENTS_FILE, 'w') as file:
-            yaml.safe_dump([], file)
+config = load_config(JQL_QUERY_FILE)
+if config['jql_str'] == '':
+    print("Error: 'jql_str' is not defined in the jql_string.yaml file")
+    exit(1)
+else:
+    jql_str = config['jql_str']
+
 def main():
+
     # [-h] for help
     # username and password are required as arguments
     autoupdater.check_for_update()

@@ -2,6 +2,7 @@ import os
 import requests
 import shutil
 import sys
+import tempfile
 
 GITHUB_REPO = "andydobrucki/gojira"  # Replace with your GitHub repository
 VERSION_FILE = "version.txt"
@@ -26,21 +27,19 @@ def check_for_update():
 
     if latest_version > current_version:
         print(f"New version {latest_version} available. Updating...")
-        if not latest_release["assets"]:
-            print("No assets found for the latest release. Downloading source archive instead.")
-            download_url = latest_release["zipball_url"]
-            download_file(download_url, "app.zip")
-            # Extract and delete app.zip if needed
-            # For example, you can use shutil.unpack_archive to extract the zip file
-            shutil.unpack_archive("app.zip", ".")
-            os.remove("app.zip")
-        else:
-            asset = latest_release["assets"][0]
-            download_url = asset["browser_download_url"]
-            download_file(download_url, "app.py")
-        set_current_version(latest_version)
-        print("Update complete. Restarting the application.")
-        restart_application()
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            if not latest_release["assets"]:
+                print("No assets found for the latest release. Downloading source archive instead.")
+                download_url = latest_release["zipball_url"]
+                download_file(download_url, os.path.join(tmpdirname, "app.zip"))
+                shutil.unpack_archive(os.path.join(tmpdirname, "app.zip"), tmpdirname)
+            else:
+                asset = latest_release["assets"][0]
+                download_url = asset["browser_download_url"]
+                download_file(download_url, os.path.join(tmpdirname, "app.py"))
+            set_current_version(latest_version)
+            print("Update complete. Restarting the application.")
+            restart_application()
 
 def download_file(url, filename):
     response = requests.get(url, stream=True)
