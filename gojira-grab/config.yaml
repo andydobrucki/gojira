@@ -1,2 +1,0 @@
-jql_str: 'filter = 87554 AND summary !~ "N/A" AND type = sub-task AND status not in (Closed, Resolved, "Drop")'
-jira_url: 'https://jira.slsi.samsungds.net'
