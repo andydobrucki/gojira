@@ -133,7 +133,7 @@ def show_latest_activity(jira_client, seen_comments):
     
     return all_comments  
 
-
+initialize_files()
 config = load_config(JQL_QUERY_FILE)
 if config['jql_str'] == '':
     print("Error: 'jql_str' is not defined in the jql_string.yaml file")
@@ -150,7 +150,6 @@ def main():
     parser.add_argument('username', type=str, help='JIRA username')
     parser.add_argument('password', type=str, help='JIRA password')
     args = parser.parse_args()
-    initialize_files()
     jira_client = establish_jira_connection(args.username, args.password)
     seen_comments = load_seen_comments()
     

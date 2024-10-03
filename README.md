@@ -5,6 +5,8 @@ App updates automatically on startup.
 
 ### Running the script
 
+jql_query is defined in jql_query.yaml file
+
 `python3 jira-test.py jiraid jirapassword`
 
 On first run, app retrieves comments from the last 7 days. 
