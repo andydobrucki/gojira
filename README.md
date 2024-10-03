@@ -4,16 +4,18 @@ Windows users - please install Windows Terminal before running this script - htt
 App updates automatically on startup.
 
 ### Installation
-Run this first from app folder to install dependency packages:
+Install dependencies:
 `pip3 install -r requirements.txt` 
 
 ### Running the script
-
-jql_query is defined in jql_query.yaml file
+1. You must provide jira_url and jql_query in config yaml first.
+2. Then run the script:
 
 `python3 jira-test.py jiraid jirapassword`
 
 On first run, app retrieves comments from the last 7 days. 
+Hit enter to see the first comment on the list.
+After all comments have been viewed, app goes into watch mode and monitors for new comments every 5 minutes.
 
 ### Excluding comnments from specific users
 The 'exclude.yaml' file (created on first run) accepts user emails that will be excluded from retrieved comments (e.g. yourself)
