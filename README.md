@@ -1,7 +1,7 @@
 ## Gojira Grab - Jira Comment Tracker
 
-Windows users - please install Windows Terminal before running this script - https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=PL
-App updates automatically on startup.
+Windows users - This script is best watched on Windows Terminal https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=PL
+
 
 ### Installation
 Install dependencies:
@@ -16,6 +16,8 @@ Install dependencies:
 On first run, app retrieves comments from the last 7 days. 
 Hit enter to see the first comment on the list.
 After all comments have been viewed, app goes into watch mode and monitors for new comments every 5 minutes.
+
+App updates automatically on startup based on repo's release tag. 
 
 ### Excluding comnments from specific users
 The 'exclude.yaml' file (created on first run) accepts user emails that will be excluded from retrieved comments (e.g. yourself)
