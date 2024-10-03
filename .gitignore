@@ -1,3 +1,4 @@
-gojira/version.txt
-gojira/*.yaml
-gojira/__pycache__/
+version.txt
+*.yaml
+/__pycache__/
+gojira-grab/__pycache__/autoupdater.cpython-310.pyc

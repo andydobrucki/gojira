@@ -1,5 +1,6 @@
 # GOJIRA - Jira Tools by SRPOL / SDV
-# GOJIRA Grab - Comment Tracker - Track JIRA new comments
+# GOJIRA Grab - Latest Comment Tracker - Track JIRA new comments
+# Main Application
 # a.dobrucki@samsung.com 
 
 import autoupdater
@@ -13,12 +14,15 @@ from bs4 import BeautifulSoup
 import os
 import time
 import yaml
+from colorama import init, Fore, Style
 
 ASCII_ART_FILE = 'art.ascii'
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 EXCLUDE_FILE = 'exclude.yaml'
 CONFIG_FILE = "config.yaml"
 
+#Colorama
+init(autoreset=True)
 
 def initialize_files():
     if not os.path.exists(EXCLUDE_FILE):
@@ -159,13 +163,13 @@ def main():
             for issue, comment in all_comments:
                 clean_comment = clean_html(comment.body)
                 clear_console()
-                print(f"Issue: {issue.key}, Title: {issue.fields.summary}")
-                print(f'Link: {issue.self}')
+                print(f"Issue: {Fore.GREEN}{issue.key}{Style.RESET_ALL}, Title: {Fore.GREEN}{issue.fields.summary}{Style.RESET_ALL}")
+                print(f'Link: {JIRA_URL}/browse/{issue.key}')
                 print(f"Author: {comment.author.displayName}, Created: {comment.created}")
-                print(f"Comment: {clean_comment}")
+                print(f"Comment: {Fore.GREEN}{clean_comment}{Style.RESET_ALL}")
                 input("Press Enter to see the next comment...")
         else:
-            print("No new comments.")
+            print("All caught up. Waiting for new comments...")
             time.sleep(300)  
         
         save_seen_comments(seen_comments)

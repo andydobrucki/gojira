@@ -1,3 +1,8 @@
+# GOJIRA - Jira Tools by SRPOL / SDV
+# GOJIRA Grab - Latest Comment Tracker - Track JIRA new comments
+# Almost Universal Autoupdater for Python Applications
+# a.dobrucki@samsung.com 
+
 import os
 import requests
 import shutil
