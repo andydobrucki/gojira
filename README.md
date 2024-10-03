@@ -26,4 +26,3 @@ Single entry in the yaml file should look like this:
 https://github.com/andydobrucki/gojira/releases
 
 Namaste
-
