@@ -101,14 +101,6 @@ def show_latest_activity(jira_client, seen_comments):
     # Comment list
     clear_console()
 
-def initialize_files():
-    if not os.path.exists(EXCLUDE_FILE):
-        with open(EXCLUDE_FILE, 'w') as file:
-            yaml.safe_dump([], file)
-    
-    if not os.path.exists(SEEN_COMMENTS_FILE):
-        with open(SEEN_COMMENTS_FILE, 'w') as file:
-            yaml.safe_dump([], file)
 
     print('Used Query: ' + jql_str)
     for issue, comment in all_comments:
@@ -118,6 +110,15 @@ def initialize_files():
     
     return all_comments  
 
+
+def initialize_files():
+    if not os.path.exists(EXCLUDE_FILE):
+        with open(EXCLUDE_FILE, 'w') as file:
+            yaml.safe_dump([], file)
+    
+    if not os.path.exists(SEEN_COMMENTS_FILE):
+        with open(SEEN_COMMENTS_FILE, 'w') as file:
+            yaml.safe_dump([], file)
 def main():
     # [-h] for help
     # username and password are required as arguments
