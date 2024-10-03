@@ -7,7 +7,8 @@ App updates automatically on startup.
 
 `python3 jira-test.py jiraid jirapassword`
 
-Available releases:
+
+### Available releases:
 https://github.com/andydobrucki/gojira/releases
 
 Namaste
