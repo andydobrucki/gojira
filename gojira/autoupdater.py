@@ -4,7 +4,7 @@ import shutil
 import sys
 import tempfile
 
-GITHUB_REPO = "andydobrucki/gojira"  # Replace with your GitHub repository
+GITHUB_REPO = "andydobrucki/gojira" 
 VERSION_FILE = "version.txt"
 
 def get_current_version():

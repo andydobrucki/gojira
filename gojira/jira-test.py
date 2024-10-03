@@ -14,10 +14,6 @@ import os
 import time
 import yaml
 
-
-# Define your JQL Query here
-
-
 ASCII_ART_FILE = 'art.ascii'
 SEEN_COMMENTS_FILE = 'seen_comments.yaml'
 EXCLUDE_FILE = 'exclude.yaml'
