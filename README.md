@@ -23,7 +23,7 @@ After all comments have been viewed, app goes into watch mode and monitors for n
 
 App updates automatically on startup based on repo's release tag. 
 
-### Excluding comnments from specific users
+### Excluding comments from specific users
 The 'exclude.yaml' file (created on first run) accepts user emails that will be excluded from retrieved comments (e.g. yourself)
 
 Single entry in the yaml file should look like this:
