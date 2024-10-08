@@ -8,12 +8,16 @@ Install dependencies:
 `pip3 install -r requirements.txt` 
 
 ### Running the script
-1. You must provide jira_url and jql_query in config yaml first.
-2. Then run the script:
+1. Run the script once to create empty yaml files
+
+`python3 jira-test.py`
+
+2. Provide jira_url and jql_query in config yaml
+3. Then run the script again with id and password:
 
 `python3 jira-test.py jiraid jirapassword`
 
-On first run, app retrieves comments from the last 7 days. 
+When first run, app retrieves comments from the last 7 days. 
 Hit enter to see the first comment on the list.
 After all comments have been viewed, app goes into watch mode and monitors for new comments every 5 minutes.
 
