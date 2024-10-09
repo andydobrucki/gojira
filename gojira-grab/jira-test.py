@@ -52,10 +52,6 @@ def get_current_version():
             return file.read().strip()
     return "0.0"  # Default version if no version file exists
 
-def print_light_green(text):
-    light_green = '\033[92m'
-    reset = '\033[0m'
-    return f"{light_green}{text}{reset}"
     
 def print_ascii_art(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -125,8 +121,7 @@ def show_latest_activity(jira_client, seen_comments):
     for issue, comment in all_comments:
         created_date = datetime.strptime(comment.created, '%Y-%m-%dT%H:%M:%S.%f%z')
         formatted_date = created_date.strftime('%d-%m-%Y %H:%M')
-        issue_key_colored = print_light_green(issue.key)
-        print(f"{issue_key_colored} {formatted_date}, - {comment.author.displayName}, {issue.fields.summary}")
+        print(f"{Fore.GREEN}{issue.key}{Style.RESET_ALL} {formatted_date}, - {comment.author.displayName}, {issue.fields.summary}")
 
     
     return all_comments  
